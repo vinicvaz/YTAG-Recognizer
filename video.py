@@ -2,7 +2,7 @@ import cv2
 import pafy
 import numpy as np
 
-path_classifier = './haarcascade_frontalface_default.xml'
+path_classifier = './premodels/haarcascade_frontalface_default.xml'
 # Load the cascade
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
@@ -25,8 +25,8 @@ gender_list = ['Male', 'Female']
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 ## LOAD CAFFE MODELS
-age_net = cv2.dnn.readNetFromCaffe('deploy_age.prototxt', 'age_net.caffemodel')
-gender_net = cv2.dnn.readNetFromCaffe('deploy_gender.prototxt', 'gender_net.caffemodel')
+age_net = cv2.dnn.readNetFromCaffe('./premodels/deploy_age.prototxt', './premodels/age_net.caffemodel')
+gender_net = cv2.dnn.readNetFromCaffe('./premodels/deploy_gender.prototxt', './premodels/gender_net.caffemodel')
 
 
 
